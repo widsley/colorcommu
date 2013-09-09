@@ -1,0 +1,49 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    -#%link{:href => "../../assets/ico/favicon.png", :rel => "shortcut icon"}/
+    %title= content_for?(:title) ? yield(:title) : '管理画面'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'operator/application'
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv.js'
+      = javascript_include_tag 'respond.min.js'
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Project name", operator_root_path, class: 'navbar-brand'
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li{class: controller_name == 'operators' ? 'active' : nil}
+              = link_to t('activerecord.models.operator'), operator_operators_path
+
+          %ul.nav.navbar-nav.pull-right
+            %li
+              = link_to t('views.input.logout'), operator_logout_path, method: :delete
+
+    .container
+      - flash.each do |name, msg|
+        .alert{class: "alert-#{name}"}
+          %a.close{data: {dismiss: 'alert'}}
+            &times;
+          = msg
+
+      = yield
+
+      %hr/
+
+      %footer
+        %p © Company 2013
+
+    = javascript_include_tag 'operator/application'

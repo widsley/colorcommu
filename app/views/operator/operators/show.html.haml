@@ -1,0 +1,33 @@
+.row
+  .col-lg-12
+    %section
+      %header
+        %h1= @title
+
+      %table.table
+        %tbody
+          %tr
+            %th= t('activerecord.attributes.operator.id')
+            %td= @operator.id
+          %tr
+            %th= t('activerecord.attributes.operator.username')
+            %td= @operator.username
+          %tr
+            %th= t('activerecord.attributes.operator.email')
+            %td= @operator.email
+          %tr
+            %th= t('activerecord.attributes.operator.created_at')
+            %td= l(@operator.created_at)
+          %tr
+            %th= t('activerecord.attributes.operator.updated_at')
+            %td= l(@operator.updated_at)
+          %tr
+            %th
+            %td
+              .btn-group
+                = link_to [:edit, :operator, @operator], class: 'btn btn-warning' do
+                  -#%span.glyphicon.glyphicon-pencil
+                  = t('views.input.edit')
+                = link_to [:operator, @operator], method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
+                  -#%span.glyphicon.glyphicon-trash
+                  = t('views.input.delete')

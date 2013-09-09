@@ -1,0 +1,23 @@
+= form_for [:operator, @operator] do |f|
+  .form-group
+    = f.label :username, class: 'control-label'
+    = f.text_field :username, class: 'form-control'
+    = full_error_messages_for(@operator, 'username', tag: :span, class: 'help-block error')
+
+  .form-group
+    = f.label :email, class: 'control-label'
+    = f.text_field :email, class: 'form-control'
+    = full_error_messages_for(@operator, 'email', tag: :span, class: 'help-block')
+
+  .form-group
+    = f.label :password, class: 'control-label'
+    = f.password_field :password, class: 'form-control'
+    = full_error_messages_for(@operator, 'password', tag: :span, class: 'help-block')
+
+  .form-group
+    = f.label :password_confirmation, class: 'control-label'
+    = f.password_field :password_confirmation, class: 'form-control'
+    = full_error_messages_for(@operator, 'password_confirmation', tag: :span, class: 'help-block')
+
+  .form-actions
+    = f.submit t('views.input.create'), class: 'btn btn-primary'

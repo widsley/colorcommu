@@ -1,0 +1,331 @@
+!!!
+/[if IE 7] <html lang="en" class="ie7">
+/[if IE 8] <html lang="en" class="ie8">
+/[if IE 9] <html lang="en" class="ie9">
+/ [if !IE]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %title Unify | Welcome...
+    / Meta
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+
+    = stylesheet_link_tag 'application', media: 'all'
+
+    %link#style_color{href: '/assets/unify/themes/default.css', rel: 'stylesheet'}
+
+  %body
+    / === Style Switcher ===
+    %i.style-switcher-btn.icon-cogs
+    .style-switcher
+      .theme-close
+        %i.icon-remove
+      .theme-heading Theme Colors
+      %ul.unstyled
+        %li.theme-default.theme-active{"data-header" => "light", "data-style" => "default"}
+        %li.theme-blue{"data-header" => "light", "data-style" => "blue"}
+        %li.theme-orange{"data-header" => "light", "data-style" => "orange"}
+        %li.theme-red{"data-header" => "light", "data-style" => "red"}
+        %li.theme-light{"data-header" => "light", "data-style" => "light"}
+    / /style-switcher
+    / === End Style Switcher ===
+    / === Top ===
+    .top
+      .container
+        %ul.loginbar.pull-right
+          %li
+            %i.icon-globe
+            %a
+              Languages
+              %i.icon-sort-up
+            %ul.nav-list
+              %li.active
+                %a{:href => "#"} English
+                %i.icon-ok
+              %li
+                %a{:href => "#"} Spanish
+              %li
+                %a{:href => "#"} Russian
+              %li
+                %a{:href => "#"} German
+          %li.devider  
+          %li
+            %a.login-btn{:href => "page_faq.html"} Help
+          %li.devider  
+          %li
+            %a.login-btn{:href => "page_login.html"} Login
+    / /top
+    / === End Top ===
+    / === Header ===
+    .header
+      .container
+        / Logo
+        .logo
+          %a{:href => "index.html"}
+            = image_tag '/assets/unify/logo1-default.png', alt: 'Logo', id: 'logo-header'
+        / /logo
+        / Menu
+        .navbar
+          .navbar-inner
+            %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            / /nav-collapse
+            .nav-collapse.collapse
+              %ul.nav.top-2
+                %li
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    Home
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "index.html"} Option1: Landing Page
+                    %li
+                      %a{:href => "page_home.html"} Option2: Header Option
+                    %li
+                      %a{:href => "page_home4.html"} Option3: Revolution Slider
+                    %li
+                      %a{:href => "page_home5.html"} Option4: Amazing Content
+                    %li
+                      %a{:href => "page_home1.html"} Option5: Mixed Content
+                    %li
+                      %a{:href => "page_home2.html"} Option6: Content with Sidebar
+                    %li
+                      %a{:href => "page_home3.html"} Option7: Aplle Style Slider
+                    %li
+                      %a{:href => "page_home_all.html"} Home All In One
+                  %b.caret-out
+                %li
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
+                    Pages
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "page_about.html"} About Us
+                    %li
+                      %a{:href => "page_services.html"} Services
+                    %li
+                      %a{:href => "page_pricing.html"} Pricing
+                    %li
+                      %a{:href => "page_coming_soon.html"} Coming Soon
+                    %li
+                      %a{:href => "page_faq.html"} FAQs
+                    %li
+                      %a{:href => "page_search.html"} Search Result
+                    %li
+                      %a{:href => "page_gallery.html"} Gallery
+                    %li
+                      %a{:href => "page_registration.html"} Registration
+                    %li
+                      %a{:href => "page_login.html"} Login
+                    %li
+                      %a{:href => "page_404.html"} 404
+                    %li
+                      %a{:href => "page_clients.html"} Clients
+                    %li
+                      %a{:href => "page_privacy.html"} Privacy Policy
+                    %li
+                      %a{:href => "page_terms.html"} Terms of Service
+                    %li
+                      %a{:href => "page_column_left.html"} 2 Columns (Left)
+                    %li
+                      %a{:href => "page_column_right.html"} 2 Columns (Right)
+                  %b.caret-out
+                %li
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
+                    Features
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "feature_grid.html"} Grid Layout
+                    %li
+                      %a{:href => "feature_typography.html"} Typography
+                    %li
+                      %a{:href => "feature_thumbnail.html"} Thumbnails
+                    %li
+                      %a{:href => "feature_component.html"} Components
+                    %li
+                      %a{:href => "feature_navigation.html"} Navigation
+                    %li
+                      %a{:href => "feature_table.html"} Tables
+                    %li
+                      %a{:href => "feature_form.html"} Forms
+                    %li
+                      %a{:href => "feature_icons.html"} Icons
+                    %li
+                      %a{:href => "feature_button.html"} Buttons
+                  %b.caret-out
+                %li
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    Portfolio
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "portfolio.html"} Portfolio
+                    %li
+                      %a{:href => "portfolio_blog_item.html"} Portfolio Item
+                    %li
+                      %a{:href => "portfolio_2columns.html"} Portfolio 2 Columns
+                    %li
+                      %a{:href => "portfolio_3columns.html"} Portfolio 3 Columns
+                    %li
+                      %a{:href => "portfolio_4columns.html"} Portfolio 4 Columns
+                  %b.caret-out
+                %li.active
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    Blog
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li.active
+                      %a{:href => "blog.html"} Blog
+                    %li
+                      %a{:href => "blog_item.html"} Blog Item
+                    %li
+                      %a{:href => "blog_left_sidebar.html"} Blog Left Sidebar
+                    %li
+                      %a{:href => "blog_item_left_sidebar.html"} Blog Item Left Sidebar
+                  %b.caret-out
+                %li
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    Contact
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "page_contact.html"} Contact Default
+                    %li
+                      %a{:href => "page_contact1.html"} Contact Boxed Map
+                  %b.caret-out
+                %li
+                  %a.search
+                    %i.icon-search.search-btn
+              .search-open
+                .input-append
+                  %form
+                    %input.span3{:placeholder => "Search", :type => "text"}/
+                    %button.btn-u{:type => "submit"} Go
+            / /nav-collapse
+          / /navbar-inner
+        / /navbar
+      / /container
+    / /header
+    / === End Header ===
+
+    = yield
+
+    / === Footer ===
+    .footer
+      .container
+        .row-fluid
+          .span4
+            / About
+            .headline
+              %h3 About
+            %p.margin-bottom-25 Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.
+            / Monthly Newsletter
+            .headline
+              %h3 Monthly Newsletter
+            %p Subscribe to our newsletter and stay up to date with the latest news and deals!
+            %form.form-inline
+              .input-append
+                %input.input-medium{:placeholder => "Email Address", :type => "text"}/
+                %button.btn-u Subscribe
+          / /span4
+          .span4
+            .posts
+              .headline
+                %h3 Recent Blog Entries
+              %dl.dl-horizontal
+                %dt
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => "/assets/unify/sliders/elastislide/6.jpg"}/
+                %dd
+                  %p
+                    %a{:href => "#"} Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template
+              %dl.dl-horizontal
+                %dt
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => "/assets/unify/sliders/elastislide/10.jpg"}/
+                %dd
+                  %p
+                    %a{:href => "#"} Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template
+              %dl.dl-horizontal
+                %dt
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => "/assets/unify/sliders/elastislide/11.jpg"}/
+                %dd
+                  %p
+                    %a{:href => "#"} Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template
+          / /span4
+          .span4
+            / Monthly Newsletter
+            .headline
+              %h3 Contact Us
+            %address
+              25, Lorem Lis Street, Orange
+              %br/
+              California, US
+              %br/
+              Phone: 800 123 3456
+              %br/
+              Fax: 800 123 3456
+              %br/
+              Email:
+              %a{:href => "mailto:info@anybiz.com"} info@anybiz.com
+            / Stay Connected
+            .headline
+              %h3 Stay Connected
+            %ul.social-icons
+              %li
+                %a.social_rss{"data-original-title" => "Feed", :href => "#"}
+              %li
+                %a.social_facebook{"data-original-title" => "Facebook", :href => "#"}
+              %li
+                %a.social_twitter{"data-original-title" => "Twitter", :href => "#"}
+              %li
+                %a.social_googleplus{"data-original-title" => "Goole Plus", :href => "#"}
+              %li
+                %a.social_pintrest{"data-original-title" => "Pinterest", :href => "#"}
+              %li
+                %a.social_linkedin{"data-original-title" => "Linkedin", :href => "#"}
+              %li
+                %a.social_vimeo{"data-original-title" => "Vimeo", :href => "#"}
+          / /span4
+        / /row-fluid
+      / /container
+    / /footer
+    / === End Footer ===
+    / === Copyright ===
+    .copyright
+      .container
+        .row-fluid
+          .span8
+            %p
+              2013 © Unify. ALL Rights Reserved.
+              %a{:href => "#"} Privacy Policy
+              |
+              %a{:href => "#"} Terms of Service
+          .span4
+            %a{:href => "index.html"}
+              = image_tag '/assets/unify/logo2-default.png', alt: '', id: 'logo-footer', class: 'pull-right'
+        / /row-fluid
+      / /container
+    / /copyright
+    / === End Copyright ===
+    / JS Global Compulsory
+    %script{:src => "/assets/unify/jquery-1.8.2.min.js", :type => "text/javascript"}
+    %script{:src => "/assets/unify/modernizr.custom.js", :type => "text/javascript"}
+    %script{:src => "/assets/unify/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
+    / JS Implementing Plugins
+    %script{:src => "/assets/unify/back-to-top.js", :type => "text/javascript"}
+    / JS Page Level
+    %script{:src => "/assets/unify/app.js", :type => "text/javascript"}
+    :javascript
+      jQuery(document).ready(function() {
+          App.init();
+      });
+    /[if lt IE 9]
+      <script src="assets/js/respond.js"></script>

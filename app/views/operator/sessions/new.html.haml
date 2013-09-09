@@ -1,0 +1,18 @@
+- title @title
+= form_tag operator_sessions_path, url: operator_login_path, class: 'form-signin' do
+  %h2.form-signin-heading= @title
+
+  - flash.each do |name, msg|
+    .alert{class: "alert-#{name}"}
+      %a.close{data: {dismiss: 'alert'}}
+        &times;
+      = msg
+
+  = text_field_tag :username, params[:username], class: 'form-control', placeholder: t('activerecord.attributes.operator.username'), autofocus: ''
+  = password_field_tag :password, nil, class: 'form-control', placeholder: t('activerecord.attributes.operator.password')
+
+  %label.checkbox
+    = check_box_tag :remember_me, 1, params[:remember_me]
+    = t('views.label.remember_me')
+
+  = submit_tag t('views.input.login'), class: 'btn btn-lg btn-primary btn-block'

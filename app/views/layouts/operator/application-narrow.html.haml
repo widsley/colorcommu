@@ -1,0 +1,35 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    -#%link{:href => "../../assets/ico/favicon.png", :rel => "shortcut icon"}/
+    %title= content_for?(:title) ? yield(:title) : '管理画面'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'operator/application'
+    = stylesheet_link_tag 'operator/application-narrow'
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv.js'
+      = javascript_include_tag 'respond.min.js'
+  %body
+    .container
+      .header
+        %ul.nav.nav-pills.pull-right
+          %li.active
+            %a{:href => "#"} Home
+          %li
+            %a{:href => "#"} About
+          %li
+            %a{:href => "#"} Contact
+        %h3.text-muted Project name
+
+      = yield
+
+      .footer
+        %p © Company 2013
+
+    = javascript_include_tag 'operator/application'

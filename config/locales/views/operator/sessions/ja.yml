@@ -1,0 +1,7 @@
+ja:
+  views:
+    operator:
+      sessions:
+        actions:
+          new:
+            title:  運営者画面ログイン

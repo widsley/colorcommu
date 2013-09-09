@@ -1,0 +1,26 @@
+- title @title
+.row.main
+  .col-lg-12
+    %section
+      %header.page-header
+        %h1= @title
+
+      = form_for @operator, url: operator_password_reset_path(params[:id]) do |f|
+
+        - if @operator.errors.any?
+          .error_messages
+            %h2 Form is invalid
+            %ul
+              - for message in @operator.errors.full_messages
+                %li= message
+
+        .form-group
+          = f.label :password, class: 'control-label'
+          = f.password_field :password, class: 'form-control'
+
+        .form-group
+          = f.label :password_confirmation, class: 'control-label'
+          = f.password_field :password_confirmation, class: 'form-control'
+
+        .form-actions
+          = f.submit t('views.input.password_reset'), class: 'btn btn-primary'

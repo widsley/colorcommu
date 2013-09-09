@@ -1,0 +1,16 @@
+ja:
+  views:
+    operator:
+      operators:
+        actions:
+          index:
+            title:  運営者一覧
+          show:
+            title:  運営者詳細
+          new:
+            title:  新規運営者登録
+          edit:
+            title:  運営者編集
+
+        messages:
+          no_results: 運営者が存在しません。

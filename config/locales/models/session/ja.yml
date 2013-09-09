@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      session: セッション
+
+    flash:
+      session:
+        actions:
+          create:
+            success: 'ログインしました。'
+            failure:  "ユーザー名かパスワードが違います。"
+          destroy:
+            success:  "ログアウトしました。"
+            failure:  "ログアウトできません。"

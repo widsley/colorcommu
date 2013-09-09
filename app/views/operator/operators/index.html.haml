@@ -1,0 +1,32 @@
+.row
+  .col-lg-12
+    %section
+      %header
+        %h1= @title
+
+      %p
+        = link_to t('views.operator.operators.actions.new.title'), new_operator_operator_path, class: 'btn btn-primary'
+
+      %table.table
+        %thead
+          %tr
+            %th= t('activerecord.attributes.operator.id')
+            %th= t('activerecord.attributes.operator.username')
+            %th= t('activerecord.attributes.operator.email')
+            %th= t('views.label.actions')
+        %tbody
+          - unless @operators.empty?
+            - @operators.each do |operator|
+              %tr
+                %td= link_to operator.id, [:operator, operator]
+                %td= link_to operator.username, [:operator, operator]
+                %td= operator.email
+                %td
+                  .btn-group
+                    = link_to t('views.input.edit'), [:edit, :operator, operator], class: 'btn btn-warning btn-sm'
+                    = link_to t('views.input.delete'), [:operator, operator], method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger btn-sm'
+          - else
+            %tr
+              %td{colspan: 4}= t('views.operator.operators.messages.no_results')
+
+      = paginate @operators, theme: 'bootstrap'

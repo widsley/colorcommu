@@ -1,0 +1,9 @@
+ja:
+  views:
+    operator:
+      password_resets:
+        actions:
+          new:
+            title:  パスワード再発行
+          edit:
+            title:  パスワード再発行

@@ -1,0 +1,21 @@
+ja:
+  views:
+    input:
+      back: 戻る
+      cancel: キャンセル
+      create: 登録
+      delete: 削除
+      edit: 編集
+      save: 保存
+      submit: 送信
+      update: 更新
+      login:  ログイン
+      logout: ログアウト
+      password_reset: パスワードをリセット
+
+    label:
+      actions:  操作
+      remember_me:  ログイン状態を保存
+
+    confirmation:
+      delete: 本当に削除しますか？

@@ -1,0 +1,14 @@
+- title @title
+.row.main
+  .col-lg-12
+    %section
+      %header.page-header
+        %h1= @title
+
+      = form_tag operator_password_resets_path, method: :post do
+        .form-group
+          = label_tag :email, t('activerecord.attributes.operator.email'), class: 'control-label'
+          = text_field_tag :email, params[:email], class: 'form-control'
+
+        .form-actions
+          = submit_tag t('views.input.password_reset'), class: 'btn btn-primary'
